@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create! email: 'tableman@csv.org', 
+  password: 'upload4you', 
+  password_confirmation: 'upload4you'
