@@ -1,0 +1,24 @@
+%h2 Total
+- dollars = number_to_currency @total
+= "The grand total of all purchases is #{ dollars }"
+
+%p= link_to "Upload another file.", new_data_file_path
+
+%h1 List Data Files
+
+%table
+  %tr
+    %th Purchaser Name
+    %th Item Description
+    %th Item Price
+    %th Purchase Quantity
+    %th Merchant Address
+    %th Merchant Name
+  - @orders.each do |order|
+    %tr
+      %td= order.purchaser.name
+      %td= order.item.name
+      %td= number_to_currency order.item.price
+      %td= order.quantity
+      %td= order.merchant.address
+      %td= order.merchant.name
